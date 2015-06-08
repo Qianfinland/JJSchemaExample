@@ -8,7 +8,8 @@ public class Product {
     private long id;
     @Attributes(required=true, description="Name of the product")
     private String name;
-    
+    @Attributes(required=true, minimum=0, exclusiveMinimum=true)
+    private BigDecimal price;
     public long getId() {
         return id;
     }
@@ -21,5 +22,23 @@ public class Product {
     public void setName(String name) {
         this.name = name;
     }
+    public BigDecimal getPrice() {
+        return price;
+    }   
+    public void setPrice(BigDecimal price) {
+        this.price = price;
+    }
    
+}
+
+class BigDecimal
+{
+	private int year;
+	public void setYear(int year) {
+		this.year = year;
+	}
+	
+	public int getYear() {
+		return year;
+	}
 }
